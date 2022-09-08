@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CheckoutService } from 'src/app/service/checkout.service';
+import { CheckoutService } from 'src/app/services/checkout.service';
 
 
 
@@ -8,9 +8,6 @@ import { CheckoutService } from 'src/app/service/checkout.service';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
-
-
-
 
 export class HomePageComponent implements OnInit {
   hasClicked = false;
