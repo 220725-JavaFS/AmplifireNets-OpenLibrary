@@ -4,20 +4,27 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+<<<<<<< HEAD
 import { BooksComponent } from './components/books/books.component';
 import { UsersComponent } from './components/users/users.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
+=======
+import { HomePageComponent } from './component/home-page/home-page.component';
+import { NavBarComponent } from './component/nav-bar/nav-bar.component';
+import { CheckoutPageComponent } from './component/checkout-page/checkout-page.component';
+>>>>>>> 36dbb93a296f5031fea968e90a0bbfdb2375351b
 
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< HEAD
     BooksComponent,
-    UsersComponent,
+    UsersComponent
+=======
     HomePageComponent,
     NavBarComponent,
     CheckoutPageComponent
+   
+>>>>>>> 36dbb93a296f5031fea968e90a0bbfdb2375351b
   ],
   imports: [
     BrowserModule,
