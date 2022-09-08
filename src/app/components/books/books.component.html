@@ -1,1 +1,13 @@
-<p>books works!</p>
+<ul>
+    <li *ngFor="let book of books">
+        <p>{{book.title}}</p>
+        <ul>
+            <li *ngFor="let author of book.authors">
+                <p>{{author.name}}</p>
+                <p>{{author.birth_year}}</p>
+                <p>{{author.death_year}}</p>
+            </li>
+        </ul>
+        
+    </li>
+</ul>
