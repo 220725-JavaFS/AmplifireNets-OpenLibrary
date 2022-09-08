@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FlexLayoutModule } from "@angular/flex-layout"
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
 import { BooksComponent } from "./components/books/books.component";
@@ -34,7 +33,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule,
-           FlexLayoutModule,
            FormsModule,
            HttpClientModule
           ]
