@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/book';
 
-
-
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -23,7 +21,4 @@ export class HomePageComponent implements OnInit {
     alert("Book added!");
     //add book object to array
   }
-
-
-
 }

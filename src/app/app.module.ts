@@ -9,6 +9,7 @@ import { UsersComponent } from './components/users/users.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
+import { ImageSizePipePipe } from './pipes/image-size-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CheckoutPageComponent } from './components/checkout-page/checkout-page.
     UsersComponent,
     HomePageComponent,
     NavBarComponent,
-    CheckoutPageComponent
+    CheckoutPageComponent,
+    ImageSizePipePipe
   ],
   imports: [
     BrowserModule,

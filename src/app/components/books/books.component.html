@@ -12,7 +12,7 @@
 
             <div class="col-xl-4 col-md-6 portfolio-item filter-books" *ngFor="let book of books">
                 <div class="portfolio-wrap">
-                  <a href="" data-gallery="portfolio-gallery-app" class="glightbox"><img [src]="book.formats['image/jpeg']" class="img-fluid" alt=""></a>
+                  <a href="" data-gallery="portfolio-gallery-app" class="glightbox"><img [src]="book.formats['image/jpeg'] | imageSizePipe:'medium'" class="img-fluid" alt=""></a>
                   <div class="portfolio-info">
                     <h4><a href="" title="More Details">{{book.title}}</a></h4>
                     <h5>Authors:</h5>
