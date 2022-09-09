@@ -1,0 +1,47 @@
+<!-- ======= Search Inventory Section ======= -->
+<section id="feature" class="portfolio sections-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header">
+        <h2>Search Inventory</h2>
+      </div>
+      
+        <div>
+            <input id="1" type="text" [(ngModel)]="titleSearch" class="form-control" placeholder="Book Title">
+            <button class="btn" (click)= showByTitle() style="background-color: #008374;">Search By Title</button>
+        </div>
+        <br>
+
+        <div>
+            <input id="2" type="text" [(ngModel)]="authorSearch" class="form-control" placeholder="Book Author">
+            <button class="btn" (click)= showByAuthor() style="background-color: #008374;">Search By Author</button>
+        </div>
+        <br>
+
+        <div>
+            <input id="3" type="topic" [(ngModel)]="topicSearch" class="form-control" placeholder="Book Topic">
+            <button class="btn" (click)= showByTopic() style="background-color: #008374;">Search By Topic</button>
+        </div>
+        <br> <br>
+
+
+
+
+        <div class="row gy-4 portfolio-container">
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-books" *ngFor="let book of books">
+                <div class="portfolio-wrap">
+                  <a href="" data-gallery="portfolio-gallery-app" class="glightbox"><img [src]="book.formats['image/jpeg'] | imageSizePipe:'medium'" class="img-fluid" alt=""></a>
+                  <div class="portfolio-info">
+                    <h4><a href="" title="More Details">{{book.title}}</a></h4>
+                    <h5>Authors:</h5>
+                    <p *ngFor="let author of book.authors">{{author.name}}</p>
+                  </div>
+                </div>
+            </div><!-- End Featured Item -->
+
+        </div><!-- End Featured Container -->
+
+      
+    </div>
+</section>

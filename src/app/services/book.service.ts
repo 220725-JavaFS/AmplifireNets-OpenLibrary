@@ -27,7 +27,10 @@ export class BookService {
   }
 
   getBooksByTitle(title: string): Observable<Result> {
-    return this.getBooksByMethod('search', '%20' + title);
+    let newTitle:any = title;
+    newTitle.replaceAll(' ', '%20');
+
+    return this.getBooksByMethod('search', newTitle);
   }
 
   getBookById(id: number): Observable<Book> {

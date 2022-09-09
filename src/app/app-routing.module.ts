@@ -6,6 +6,7 @@ import { BooksComponent } from "./components/books/books.component";
 import { UsersComponent } from "./components/users/users.component";
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchPageComponent } from './components/search-page/search-page.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   { 
     path: "books", 
     component: BooksComponent 
+  },
+  { 
+    path: "search", 
+    component: SearchPageComponent 
   },
   { 
     path: "users", 

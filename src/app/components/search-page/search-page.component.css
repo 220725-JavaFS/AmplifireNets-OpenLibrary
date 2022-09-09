@@ -1,0 +1,17 @@
+.section-header {
+    text-align: left;
+    padding-bottom: 60px;
+  }
+  .sections-bg {
+    background-color: #f6f6f6;
+  }
+
+  section {
+    padding: 60px 0;
+    overflow: hidden;
+  }
+
+.btn{
+    border-radius: 5px;
+    color:white;
+}
