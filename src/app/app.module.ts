@@ -10,6 +10,8 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
 import { ImageSizePipePipe } from './pipes/image-size-pipe.pipe';
+import { SearchPageComponent } from './components/search-page/search-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,13 @@ import { ImageSizePipePipe } from './pipes/image-size-pipe.pipe';
     HomePageComponent,
     NavBarComponent,
     CheckoutPageComponent,
-    ImageSizePipePipe
+    ImageSizePipePipe,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],
