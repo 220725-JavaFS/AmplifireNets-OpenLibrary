@@ -34,5 +34,9 @@ export class BookService {
     return this.http.get<Book>(this.gutendexBaseUrl + `/${id}`);
   }
 
+  getFeaturedBooks(): Observable<Result> {
+    return this.http.get<Result>(this.gutendexBaseUrl);
+  }
+
   constructor(private http: HttpClient) { }
 }

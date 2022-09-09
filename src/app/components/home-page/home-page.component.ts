@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CheckoutService } from 'src/app/services/checkout.service';
+import { BookService } from 'src/app/services/book.service';
+import { Book } from 'src/app/models/book';
 
 
 
@@ -11,11 +12,11 @@ import { CheckoutService } from 'src/app/services/checkout.service';
 
 export class HomePageComponent implements OnInit {
   hasClicked = false;
-  // books:Book[] = [];
-  constructor(private checkoutService:CheckoutService) {  }
+  books: Book[] = [];
+  constructor(private bookService: BookService) {  }
 
   ngOnInit(): void {
-    
+    //this.bookService.getFeaturedBooks((result))
   }
 
   addBook(){
