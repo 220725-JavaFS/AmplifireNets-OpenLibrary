@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckoutService } from 'src/app/services/checkout.service';
+import { Book } from 'src/app/models/book';
 
 @Component({
   selector: 'app-checkout-page',
@@ -8,23 +9,14 @@ import { CheckoutService } from 'src/app/services/checkout.service';
 })
 export class CheckoutPageComponent implements OnInit {
 
- // books:Book[] = [];
+  books:Book[] = [];
 
  visibility:boolean = false;
 
   constructor(private checkoutService:CheckoutService) { }
 
   ngOnInit(): void {
-    /* To get the Books info from the API
-
-    this.checkoutService.getBooks().subscribe({
-      next:(data:Book[])=>{
-        this.books=data;
-      },
-      error:()=>{
-        console.log("Failed to load book");
-      }
-    }); */
+  
   }
 
   switchVisible():void {

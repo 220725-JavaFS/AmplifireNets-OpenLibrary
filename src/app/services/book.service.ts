@@ -13,7 +13,7 @@ export class BookService {
 
   gutendexBaseUrl: string = 'https://gutendex.com/books';
 
-  getBooksByMethod(key: string, val: string): Observable<Result> {
+  getBooksByMethod(key: string, val: any): Observable<Result> {
     const params = new HttpParams().set(key, val);
     return this.http.get<Result>(this.gutendexBaseUrl, {params});
   }
@@ -35,6 +35,10 @@ export class BookService {
 
   getBookById(id: number): Observable<Book> {
     return this.http.get<Book>(this.gutendexBaseUrl + `/${id}`);
+  }
+
+  getBookByIds(id: number): Observable<Result> {
+    return this.getBooksByMethod('ids', id);
   }
 
   getFeaturedBooks(): Observable<Result> {

@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Result } from 'src/app/models/result';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'
 import { Book } from 'src/app/models/book';
 import { BookService } from 'src/app/services/book.service';
-import { map } from 'rxjs';
-import { take } from 'rxjs';
 
 @Component({
   selector: 'app-books',
@@ -12,23 +10,17 @@ import { take } from 'rxjs';
 })
 export class BooksComponent implements OnInit {
 
-  books: Book[] = [];
-  sectionTitle: string = "Featured Books";
+  @Input() books: Book[] = [];
 
   addBook() {console.log("Book added")};
 
-  constructor(private bookService: BookService) { };
+  constructor(private bookService: BookService , route: ActivatedRoute) { };
+  
 
-  ngOnInit(): void {
-    this.bookService.getFeaturedBooks()
-        .pipe(map<Result, Book[]>((result: Result) => result.results))
-        .subscribe({
-          next: (books: Book[]) => this.books = books.slice(0,9),
-          error: () => {
-            this.books = [];
-            console.log("Could not retrieve any books");
-          }
-        });
+  ngOnInit(): void {}
+
+  trackByBookID(index: number, book: Book){
+    return book.id;
   }
 
 }

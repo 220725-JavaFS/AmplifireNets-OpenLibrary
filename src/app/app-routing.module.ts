@@ -7,6 +7,7 @@ import { UsersComponent } from "./components/users/users.component";
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchPageComponent } from './components/search-page/search-page.component';
+import { BooksdetailComponent } from './components/booksdetail/booksdetail.component';
 
 const routes: Routes = [
   {
@@ -15,15 +16,20 @@ const routes: Routes = [
   },
   {
     path:"home",
-    component: HomePageComponent
+    component: HomePageComponent,
+
   },
   {
     path:"checkout",
     component: CheckoutPageComponent
-  },
+  },  
+  {path: "books/:id",
+  component: BooksdetailComponent},
   { 
     path: "books", 
-    component: BooksComponent 
+    component: BooksComponent,
+
+    
   },
   { 
     path: "search", 
