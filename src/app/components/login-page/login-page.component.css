@@ -11,6 +11,7 @@
   }
 
   section {
+    outline: 2px solid #008374;
     padding: 100px;
     padding-bottom: 150px;
     overflow: hidden;
