@@ -31,7 +31,7 @@ export class SearchPageComponent implements OnInit {
     this.bookService.getBooksByTitle(this.titleSearch)
         .pipe(map<Result, Book[]>((result: Result) => result.results))
         .subscribe({
-          next: (books: Book[]) => this.books = books.slice(0,20),
+          next: (books: Book[]) => this.books = books.slice(0,21),
           error: () => {
             this.books = [];
             console.log("Could not retrieve any books");
@@ -45,7 +45,7 @@ showByAuthor(): void{
   this.bookService.getBooksByAuthor(this.authorSearch)
       .pipe(map<Result, Book[]>((result: Result) => result.results))
       .subscribe({
-        next: (books: Book[]) => this.books = books.slice(0,20),
+        next: (books: Book[]) => this.books = books.slice(0,21),
         error: () => {
           this.books = [];
           console.log("Could not retrieve any books");
@@ -59,7 +59,7 @@ showByTopic(): void{
   this.bookService.getBooksByTopic(this.topicSearch)
       .pipe(map<Result, Book[]>((result: Result) => result.results))
       .subscribe({
-        next: (books: Book[]) => this.books = books.slice(0,20),
+        next: (books: Book[]) => this.books = books.slice(0,21),
         error: () => {
           this.books = [];
           console.log("Could not retrieve any books");
