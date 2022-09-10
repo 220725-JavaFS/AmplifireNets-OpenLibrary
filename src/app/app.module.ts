@@ -12,6 +12,8 @@ import { CheckoutPageComponent } from './components/checkout-page/checkout-page.
 import { ImageSizePipePipe } from './pipes/image-size-pipe.pipe';
 import { SearchPageComponent } from './components/search-page/search-page.component';
 import { FormsModule } from '@angular/forms';
+import { RegisterPageComponent } from './components/register-page/register-page.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormsModule } from '@angular/forms';
     NavBarComponent,
     CheckoutPageComponent,
     ImageSizePipePipe,
-    SearchPageComponent
+    SearchPageComponent,
+    RegisterPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
