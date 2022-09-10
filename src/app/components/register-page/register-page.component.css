@@ -1,0 +1,47 @@
+.section-header {
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  .sections-bg {
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 200px;
+    background-color: #f6f6f6;
+  }
+
+  section {
+    padding: 100px;
+    padding-bottom: 200px;
+    overflow: hidden;
+  }
+
+.btn{
+    font-size: larger;
+    border-radius: 5px;
+    color:white;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+}
+
+.form-control {
+    box-shadow: 1px 1px #423d3d;
+    margin-left:100px;
+    margin-right: 100px;
+}
+
+.btnRegister{
+    text-align: center;
+}
+
+.col-sm-2{
+  white-space: nowrap;
+    margin-left:100px;
+    margin-right:100px;
+}
+
+.mb-3{
+    margin-left: 70px;
+    margin-right: 140px;
+}

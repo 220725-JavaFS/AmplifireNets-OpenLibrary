@@ -17,17 +17,13 @@ export class SearchPageComponent implements OnInit {
 
   }
 
-  invisible:boolean = true;
   books: Book[] = [];
 
   titleSearch:string ="";
   authorSearch:string="";
   topicSearch:string="";
 
-
   showByTitle(): void{
-    this.invisible = false;
-
     this.bookService.getBooksByTitle(this.titleSearch)
         .pipe(map<Result, Book[]>((result: Result) => result.results))
         .subscribe({
@@ -40,8 +36,6 @@ export class SearchPageComponent implements OnInit {
   }
 
 showByAuthor(): void{
-  this.invisible = false;
-
   this.bookService.getBooksByAuthor(this.authorSearch)
       .pipe(map<Result, Book[]>((result: Result) => result.results))
       .subscribe({
@@ -54,8 +48,6 @@ showByAuthor(): void{
 }
 
 showByTopic(): void{
-  this.invisible = false;
-
   this.bookService.getBooksByTopic(this.topicSearch)
       .pipe(map<Result, Book[]>((result: Result) => result.results))
       .subscribe({
