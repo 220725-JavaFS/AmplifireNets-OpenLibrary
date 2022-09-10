@@ -7,8 +7,9 @@ import { UsersComponent } from "./components/users/users.component";
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchPageComponent } from './components/search-page/search-page.component';
-import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import { RegisterPageComponent } from './components/register-page/register-page.component';
+
 
 const routes: Routes = [
   {
