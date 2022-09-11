@@ -9,8 +9,14 @@ export class CheckoutService {
   books:Book[] = [];
 
   addToCart(book: Book): void {
-    if (!this.books.some((item: Book) => item.id === book.id))
-    this.books.push(book);
+    if (!this.books.some((item: Book) => item.id === book.id)) {
+      this.books.push(book);
+      window.alert(`${book.title} was added to your bookshelf!`);
+    } else {
+      window.alert("You're already borrowing that book!")
+    }
+
+    
   }
 
   removeFromCart(book: Book): void {
