@@ -1,12 +1,21 @@
 import { Injectable } from '@angular/core';
+import { Observable, of, tap } from 'rxjs';
 import { Book } from 'src/app/models/book';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CheckoutService {
 
+  constructor() { }
+
   books:Book[] = [];
+
+  getBooks():Observable<Book[]>{
+    let booksObserv: Observable<Book[]> = of(this.books);
+    return booksObserv;
+  }
 
   addToCart(book: Book): void {
     if (!this.books.some((item: Book) => item.id === book.id)) {
@@ -17,15 +26,22 @@ export class CheckoutService {
     }
   }
 
-  removeFromCart(book: Book): void {
-    this.books = this.books.filter((item: Book) => item.id !== book.id);
+  removeFromCart(book: Book) {
+    //this.books = this.books.filter((item: Book) => item.id !== book.id);
+
+    let booksIndex = this.books.findIndex((item: Book) => item.id === book.id);
+    if (booksIndex > -1) {
+      this.books.splice(booksIndex, 1);
+    }
   }
 
-  getItems(): Book[] {
+  getItems(){
     return this.books;
   }
 
   clearCart(): void {
     this.books = [];
   }
+
+
 }

@@ -11,6 +11,7 @@
   }
 
   section {
+    height:50%;
     outline: 2px solid #008374;
     padding: 100px;
     padding-bottom: 200px;
@@ -47,3 +48,12 @@
     margin-right: 140px;
 }
 
+.chkbox{
+  margin-left: 100px;
+  margin-top: 50px;
+
+}
+
+.div1{
+  font-size: smaller;
+}

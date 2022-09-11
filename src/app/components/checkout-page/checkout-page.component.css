@@ -143,3 +143,43 @@ h1 {
   .hero .icon-box:hover .icon {
     color: #fff;
   }
+
+  .container1 {
+    position: relative;
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .container1 img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .container1 .btn1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+.btn1{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.portfolio-wrap{
+  box-shadow: 5px 5px;
+}
+
+h2{
+  text-align: center;
+  padding-bottom: 60px;
+}
+

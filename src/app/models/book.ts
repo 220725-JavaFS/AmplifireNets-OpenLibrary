@@ -9,6 +9,7 @@ type Person = {
 }
 
 export class Book {
+    style: any;
     constructor(
         public id: number,
         public title: string,

@@ -12,4 +12,12 @@ export class RegisterPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showPassword(){
+    let pass = document.getElementById("passwordId") as HTMLInputElement;
+    if (pass.type === "password") {
+      pass.type = "text";
+    } else {
+      pass.type = "password";
+    }
+  }
 }
