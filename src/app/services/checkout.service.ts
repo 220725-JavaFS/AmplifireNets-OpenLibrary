@@ -1,23 +1,31 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Book } from 'src/app/models/book';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CheckoutService {
 
-  //books:Book[] = [];
+  books:Book[] = [];
 
-  url:string = 'https://gutendex.com/books/'
-
-  constructor(private httpClient:HttpClient) { }
-
- /* getBooks():Observable<Book[]>{
-    return this.httpClient.get(this.url,{
-      headers:{
-      accept:"application/json"
+  addToCart(book: Book): void {
+    if (!this.books.some((item: Book) => item.id === book.id)) {
+      this.books.push(book);
+      window.alert(`${book.title} was added to your bookshelf!`);
+    } else {
+      window.alert("You're already borrowing that book!")
     }
-  }) as Observable<Book[]>;
-} */
+  }
+
+  removeFromCart(book: Book): void {
+    this.books = this.books.filter((item: Book) => item.id !== book.id);
+  }
+
+  getItems(): Book[] {
+    return this.books;
+  }
+
+  clearCart(): void {
+    this.books = [];
+  }
 }

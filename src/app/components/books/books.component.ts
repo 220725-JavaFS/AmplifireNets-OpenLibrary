@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Result } from 'src/app/models/result';
 import { Book } from 'src/app/models/book';
-import { BookService } from 'src/app/services/book.service';
-import { map } from 'rxjs';
+import { CheckoutService } from 'src/app/services/checkout.service';
 
 @Component({
   selector: 'app-books',
@@ -13,9 +11,12 @@ export class BooksComponent implements OnInit {
 
   @Input() books: Book[] = [];
 
-  addBook() {console.log("Book added")};
+  addBookToCart(book: Book): void {
+    this.checkoutService.addToCart(book);
+    console.log(this.checkoutService.books.length);
+  };
 
-  constructor(private bookService: BookService) { };
+  constructor(private checkoutService: CheckoutService) { };
 
   ngOnInit(): void {};
 
