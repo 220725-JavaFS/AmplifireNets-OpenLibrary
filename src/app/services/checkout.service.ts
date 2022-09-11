@@ -1,23 +1,47 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
+import { Book } from 'src/app/models/book';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CheckoutService {
 
-  //books:Book[] = [];
+  constructor() { }
 
-  url:string = 'https://gutendex.com/books/'
+  books:Book[] = [];
 
-  constructor(private httpClient:HttpClient) { }
+  getBooks():Observable<Book[]>{
+    let booksObserv: Observable<Book[]> = of(this.books);
+    return booksObserv;
+  }
 
- /* getBooks():Observable<Book[]>{
-    return this.httpClient.get(this.url,{
-      headers:{
-      accept:"application/json"
+  addToCart(book: Book): void {
+    if (!this.books.some((item: Book) => item.id === book.id)) {
+      this.books.push(book);
+      window.alert(`${book.title} was added to your bookshelf!`);
+    } else {
+      window.alert("You're already borrowing that book!")
     }
-  }) as Observable<Book[]>;
-} */
+  }
+
+  removeFromCart(book: Book) {
+    //this.books = this.books.filter((item: Book) => item.id !== book.id);
+
+    let booksIndex = this.books.findIndex((item: Book) => item.id === book.id);
+    if (booksIndex > -1) {
+      this.books.splice(booksIndex, 1);
+    }
+  }
+
+  getItems(){
+    return this.books;
+  }
+
+  clearCart(): void {
+    this.books = [];
+  }
+
+
 }

@@ -23,8 +23,10 @@ const routes: Routes = [
     path:"checkout",
     component: CheckoutPageComponent
   },  
-  {path: "books/:id",
-  component: BooksdetailComponent},
+  {
+    path: "books/:id",
+    component: BooksdetailComponent
+  },
   { 
     path: "books", 
     component: BooksComponent,
