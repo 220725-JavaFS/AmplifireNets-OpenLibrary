@@ -11,7 +11,7 @@ export class BooksComponent implements OnInit {
 
   @Input() books: Book[] = [];
 
-  addBook(book: Book): void {
+  addBookToCart(book: Book): void {
     this.checkoutService.addToCart(book);
     console.log(this.checkoutService.books.length);
   };

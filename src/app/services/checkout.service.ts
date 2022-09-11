@@ -15,8 +15,6 @@ export class CheckoutService {
     } else {
       window.alert("You're already borrowing that book!")
     }
-
-    
   }
 
   removeFromCart(book: Book): void {
