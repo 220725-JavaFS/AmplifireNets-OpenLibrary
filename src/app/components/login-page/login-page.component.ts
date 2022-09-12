@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login-page',
@@ -7,13 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  userInput = document.getElementById("username") as HTMLInputElement;
+  passInput = document.getElementById("password") as HTMLInputElement;
+
+  constructor(loginService:LoginService, user:User) { }
 
   ngOnInit(): void {
   }
 
+  getInput(userName: User, password: User){
+    
+  }
+  
+
   showPassword(){
-    let pass = document.getElementById("passwordId") as HTMLInputElement;
+    let pass = document.getElementById("password") as HTMLInputElement;
     if (pass.type === "password") {
       pass.type = "text";
     } else {

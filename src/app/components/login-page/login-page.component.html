@@ -18,7 +18,7 @@
 
             <label class="col-sm-2 col-form-label">Enter Password:</label>
             <div class="div1 col-sm-10">
-              <input type="password" class="form-control" id="passwordId" required>
+              <input type="password" class="form-control" id="password" required>
               <input type="checkbox" class="chkbox" (click)="showPassword()">Show Password
             </div>
 
@@ -27,7 +27,7 @@
         <br><br><br>
 
         <div class="btnLogin">
-            <button class="btn" style="background-color: #008374;">Login!</button>
+            <button (click)="getInput()" class="btn" style="background-color: #008374;">Login!</button>
         </div>
     </div>
 
