@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, tap } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Book } from 'src/app/models/book';
 
 
@@ -13,8 +13,8 @@ export class CheckoutService {
   books:Book[] = [];
 
   getBooks():Observable<Book[]>{
-    let booksObserv: Observable<Book[]> = of(this.books);
-    return booksObserv;
+    return of(this.books);
+  
   }
 
   addToCart(book: Book): void {

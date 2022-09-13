@@ -1,10 +1,19 @@
-<!-- ======= Register Section ======= -->
+
 <section id="feature" class="portfolio sections-bg">
-  <div class="container" data-aos="fade-up">
-    <div class="section-header">
-      <h2>Login</h2>
-    </div>
-    <br />
+
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2>Login</h2>
+        </div>
+        <br>
+ 
+        <form class="mb-3 row">
+            
+            <label class="col-sm-2 col-form-label" style="display:inline">Enter Username:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" [(ngModel)]="userInput" name="userName" required>
+            </div>
 
     <form class="mb-3 row">
       <label class="col-sm-2 col-form-label" style="display: inline"
@@ -14,7 +23,11 @@
         <input type="text" class="form-control" id="userName" required />
       </div>
 
-      <br /><br /><br />
+            <label class="col-sm-2 col-form-label">Enter Password:</label>
+            <div class="div1 col-sm-10">
+              <input type="password" class="form-control" [(ngModel)]="passInput" name="passInput" required>
+              <input type="checkbox" class="chkbox" (click)="submit()">Show Password
+            </div>
 
       <label class="col-sm-2 col-form-label">Enter Password:</label>
       <div class="div1 col-sm-10">
@@ -25,9 +38,9 @@
     </form>
 
     <br /><br /><br />
-
-    <div class="btnLogin">
-      <button class="btn" style="background-color: #008374">Login!</button>
+        <div class="btnLogin">
+          <!-- <button (click)="getInput()" class="btn" style="background-color: #008374;">Login!</button> -->
+        </div>
     </div>
   </div>
 </section>
