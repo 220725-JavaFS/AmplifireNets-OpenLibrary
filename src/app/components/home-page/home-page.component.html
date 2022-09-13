@@ -27,7 +27,7 @@
       <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start" style="background-color: #008374;">
         <h2>Welcome to <span>The Open Library</span></h2>
         <p>Dude. Free books!</p>
-        <div class="d-flex justify-content-center justify-content-lg-start">
+        <div *ngIf="nav.visible" class="d-flex justify-content-center justify-content-lg-start">
           <a href="#about" class="btn-get-started" routerLink="/register" routerLinkActive="active">Register Here!</a>
         </div>
       </div>

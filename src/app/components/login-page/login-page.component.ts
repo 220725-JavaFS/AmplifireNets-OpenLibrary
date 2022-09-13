@@ -1,6 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { User } from "src/app/models/user";
-import { LoginService } from "src/app/services/login.service";
+
+import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { LoginService } from 'src/app/services/login.service';
+import { NavServicesService } from 'src/app/services/nav-services.service';
+
+
 
 @Component({
   selector: "app-login-page",
@@ -9,18 +13,23 @@ import { LoginService } from "src/app/services/login.service";
 })
 export class LoginPageComponent implements OnInit {
   newLogin = new User(0, "", "", "", "");
-  enabler = "";
 
   constructor(private loginService: LoginService) {}
 
+  constructor(private loginService:LoginService, private nav: NavServicesService) { }
   ngOnInit(): void {}
+
 
   onSubmit() {
     this.loginService.doGet(this.newLogin);
-    this.enabler = "active";
+    this.toggleNavComponents();
   }
 
-  showPassword() {
+  toggleNavComponents(){
+    this.nav.toggle();
+  }
+
+  showPassword(){
     let pass = document.getElementById("password") as HTMLInputElement;
     if (pass.type === "password") {
       pass.type = "text";

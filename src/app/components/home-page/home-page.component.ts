@@ -3,6 +3,7 @@ import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/book';
 import { map } from 'rxjs';
 import { Result } from 'src/app/models/result';
+import { NavServicesService } from 'src/app/services/nav-services.service';
 
 @Component({
   selector: 'app-home-page',
@@ -13,7 +14,7 @@ import { Result } from 'src/app/models/result';
 export class HomePageComponent implements OnInit {
   hasClicked = false;
   books: Book[] = [];
-  constructor(private bookService: BookService) {  };
+  constructor(private bookService: BookService, public nav: NavServicesService ) {  };
 
   ngOnInit(): void {
     this.bookService.getFeaturedBooks()
