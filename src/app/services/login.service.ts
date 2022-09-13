@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { CookieService } from "ngx-cookie-service";
 import { Observable } from "rxjs";
 import { User } from "../models/user";
+import { NavServicesService } from "./nav-services.service";
 
 @Injectable({
   providedIn: "root",
@@ -12,7 +13,7 @@ export class LoginService {
   constructor(
     private httpClient: HttpClient,
     private cookieService: CookieService,
-    private router: Router
+    private router: Router,
   ) {}
 
   urlDatabase: string = "http://18.218.155.146:8083/data/login?";

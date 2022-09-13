@@ -13,10 +13,17 @@ export class RegisterPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  bool:boolean=true;
+
   newUser = new User(0, "", "", "", "");
 
-  onSubmit() {
-    console.log(this.registerService.doPost(this.newUser));
+  async onSubmit() {
+    //console.log(this.registerService.doPost(this.newUser));
+
+    if (this.newUser.userName.trim()==="user" && this.newUser.password.trim()==="user"){
+      this.bool=false;
+    }
+    
   }
 
   showPassword() {

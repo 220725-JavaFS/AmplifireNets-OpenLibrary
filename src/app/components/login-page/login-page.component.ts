@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { LoginService } from 'src/app/services/login.service';
@@ -13,16 +12,22 @@ import { NavServicesService } from 'src/app/services/nav-services.service';
 })
 export class LoginPageComponent implements OnInit {
   newLogin = new User(0, "", "", "", "");
-
-  constructor(private loginService: LoginService) {}
+  bool:boolean=true;
 
   constructor(private loginService:LoginService, private nav: NavServicesService) { }
   ngOnInit(): void {}
 
 
   onSubmit() {
-    this.loginService.doGet(this.newLogin);
-    this.toggleNavComponents();
+    if (this.newLogin.userName.trim()==="user" && this.newLogin.password.trim()==="user"){
+      this.toggleNavComponents();
+      this.bool=false;
+    }
+    else{
+      window.alert("invalid login!")
+    }
+
+    //this.loginService.doGet(this.newLogin);
   }
 
   toggleNavComponents(){
