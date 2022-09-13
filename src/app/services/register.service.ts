@@ -16,7 +16,7 @@ export class RegisterService {
   // response = this.httpClient.post<String>(this.urlDatabase, user);
 
   doPost(user: User): void {
-    let response = this.httpClient.post<any>(this.urlDatabase, user);
+    let response = this.httpClient.post<any>(this.urlDatabase, user, {headers: {'Content-type': 'text/plain'}});
     response.subscribe((x) => {
       console.log(x);
     });
