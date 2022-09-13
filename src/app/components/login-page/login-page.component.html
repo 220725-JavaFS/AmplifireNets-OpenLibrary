@@ -17,14 +17,13 @@
             <label class="col-sm-2 col-form-label">Enter Password:</label>
             <div class="div1 col-sm-10">
               <input type="password" class="form-control" [(ngModel)]="passInput" name="passInput" required>
-              <input type="checkbox" class="chkbox" (click)="submit()">Show Password
+              <input type="checkbox" class="chkbox" (click)="showPassword()">Show Password
             </div>
           </form>
 
     <br /><br /><br />
         <div class="btnLogin">
-          <button (click)="getInput()" class="btn" style="background-color: #008374;">Login!</button>
+          <button (click)="submit()" class="btn" style="background-color: #008374;">Login!</button>
         </div>
     </div>
-  </div>
 </section>
