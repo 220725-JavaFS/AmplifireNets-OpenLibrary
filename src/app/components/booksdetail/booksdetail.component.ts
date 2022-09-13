@@ -4,6 +4,8 @@ import { Book } from 'src/app/models/book';
 import { Result } from 'src/app/models/result';
 import { BookService } from 'src/app/services/book.service';
 import { map } from 'rxjs';
+import { HttpClient } from'@angular/common/http';
+import { CheckoutService } from 'src/app/services/checkout.service';
 
 
 @Component({
@@ -14,36 +16,48 @@ import { map } from 'rxjs';
 
 export class BooksdetailComponent implements OnInit {
 
-  constructor(private  bookService: BookService, private route: ActivatedRoute) {}
+  books: Book[] = [];
+
+  constructor(private  bookService: BookService, private route: ActivatedRoute, private html: HttpClient,
+    private checkoutService: CheckoutService ) {}
 
     id: any = "";    
-    books: Book[] = [];
-    formats: String = ""
+    formats: any = ""
+    key: string = ""
+    val: string = "11";
+    title: any = "";
+  
+    
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
 
-    this.bookService.getBookByIds(this.id)
-    .pipe(map<Result, Book[]>((result: Result) => result.results))
-    .subscribe({
-      next: (books: Book[]) => this.books = books.slice(0,21),
-      error: () => {
-        this.books = [];
-        console.log("Could not retrieve any books");
-      }
-    });
-  }   
+    this.html.get('https://www.gutenberg.org/files/' + this.id + '/' + this.id + '.txt' ,{responseType:'text'})
+      .subscribe(res=>{
+      this.formats = res.slice(17640,18420);
+    })
 
-    showBook(): void {
-    this.bookService.getBookByIds(this.id)
-    .pipe(map<Result, Book[]>((result: Result) => result.results))
-    .subscribe({
-      next: (books: Book[]) => this.books = books.slice(0,21),
-      error: () => {
-        this.books = [];
-        console.log("Could not retrieve any books");
-      }
-    });
+    this.html.get('https://www.gutenberg.org/files/' + this.id + '/' + this.id + '-0.txt' ,{responseType:'text'})
+      .subscribe(res=>{
+      this.formats = res.slice(17640,18420);
+    })
+
+
+    this.bookService.getBookById(this.id) 
+        .subscribe(book=>{
+          next:
+          error: () => {
+            this.books = [];
+            console.log("Could not retrieve any books");
+          }
+        });
   }
+
+
+  
+
+
+  
+
 }
 
