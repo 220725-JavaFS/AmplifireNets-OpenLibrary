@@ -1,29 +1,49 @@
-
+<!-- ======= Login Section ======= -->
 <section id="feature" class="portfolio sections-bg">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <h2>Login</h2>
+    </div>
+    <br />
+    <form class="mb-3 row" #f="ngForm">
+      <label class="col-sm-2 col-form-label">Enter Username:</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          [(ngModel)]="this.newLogin.userName"
+          class="form-control"
+          id="userName"
+          name="userName"
+          required
+        />
+      </div>
 
-    <div class="container" data-aos="fade-up">
+      <br /><br /><br />
 
-        <div class="section-header">
-            <h2>Login</h2>
-        </div>
-        <br>
- 
-        <form class="mb-3 row">
-            <label class="col-sm-2 col-form-label" style="display:inline">Enter Username:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" [(ngModel)]="userInput" name="userName" required>
-            </div>
-
-            <label class="col-sm-2 col-form-label">Enter Password:</label>
-            <div class="div1 col-sm-10">
-              <input type="password" class="form-control" [(ngModel)]="passInput" name="passInput" required>
-              <input type="checkbox" class="chkbox" (click)="showPassword()">Show Password
-            </div>
-          </form>
-
+      <label class="col-sm-2 col-form-label">Enter Password:</label>
+      <div class="div1 col-sm-10">
+        <input
+          type="password"
+          [(ngModel)]="this.newLogin.password"
+          class="form-control"
+          id="password"
+          name="userName"
+          required
+        />
+        <input type="checkbox" class="chkbox" (click)="showPassword()" />Show
+        Password
+      </div>
+    </form>
+    
     <br /><br /><br />
-        <div class="btnLogin">
-          <button (click)="submit()" class="btn" style="background-color: #008374;" routerLink="/home" routerLinkActive="active">Login!</button>
-        </div>
+    
+    <div class="btnLogin">
+      <button
+        (click)="onSubmit()"
+        class="btn"
+        style="background-color: #008374"
+      >
+        Login!
+      </button>
     </div>
 </section>
