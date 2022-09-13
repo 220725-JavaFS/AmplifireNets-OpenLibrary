@@ -11,6 +11,9 @@
               <a href="" style="pointer-events: none;">
                 <img [src]="book.formats['image/jpeg'] | imageSizePipe:'medium'" class="img-fluid" alt="">
               </a>
+              <br>
+              <br>
+              <h4>{{book.title}} </h4>
           </div><!-- End Div Class: portfolio-wrap -->
               <a class="btn1" style="background-color:red; cursor: pointer;" (click)=removeBook(book)>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
