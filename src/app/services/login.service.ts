@@ -15,7 +15,7 @@ export class LoginService {
 
   doPost(userName: string, password: string): Observable<User> {
     let body = {};
-    return this.httpClient.post<User>(this.urlDatabase + "userName=" +userName + "&password=" +password, body);
+    return this.httpClient.post<User>(this.urlDatabase + "userName=" + userName + "&password=" +password, body);
   }
 
 }
