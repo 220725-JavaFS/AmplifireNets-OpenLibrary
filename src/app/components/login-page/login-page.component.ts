@@ -1,27 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user';
-import { LoginService } from 'src/app/services/login.service';
+import { Component, OnInit } from "@angular/core";
+import { User } from "src/app/models/user";
+import { LoginService } from "src/app/services/login.service";
 
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css']
+  selector: "app-login-page",
+  templateUrl: "./login-page.component.html",
+  styleUrls: ["./login-page.component.css"],
 })
 export class LoginPageComponent implements OnInit {
+  newLogin = new User(0, "", "", "", "");
+  enabler = "";
 
-  userInput = "";
-  passInput = "";
+  constructor(private loginService: LoginService) {}
 
-  constructor(private loginService:LoginService) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  onSubmit() {
+    this.loginService.doGet(this.newLogin);
+    this.enabler = "active";
   }
 
-  submit(): void {
-    this.loginService.doPost(this.userInput, this.passInput);
-  }
-
-  showPassword(){
+  showPassword() {
     let pass = document.getElementById("password") as HTMLInputElement;
     if (pass.type === "password") {
       pass.type = "text";
