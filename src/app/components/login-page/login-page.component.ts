@@ -9,18 +9,17 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginPageComponent implements OnInit {
 
-  userInput = document.getElementById("username") as HTMLInputElement;
-  passInput = document.getElementById("password") as HTMLInputElement;
+  userInput = "";
+  passInput = "";
 
-  constructor(loginService:LoginService, user:User) { }
+  constructor(private loginService:LoginService) { }
 
   ngOnInit(): void {
   }
 
-  getInput(userName: User, password: User){
-    
+  submit(): void {
+    this.loginService.doPost(this.userInput, this.passInput);
   }
-  
 
   showPassword(){
     let pass = document.getElementById("password") as HTMLInputElement;

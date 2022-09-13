@@ -13,7 +13,7 @@ export class LoginService {
 
   urlDatabase:string = "http://18.218.155.146:8083/data/login?";
 
-  doPost(userName: User, password: User): Observable<User> {
+  doPost(userName: string, password: string): Observable<User> {
     let body = {};
     return this.httpClient.post<User>(this.urlDatabase + "userName=" +userName + "&password=" +password, body);
   }
