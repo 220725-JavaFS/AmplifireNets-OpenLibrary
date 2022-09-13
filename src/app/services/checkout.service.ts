@@ -13,8 +13,8 @@ export class CheckoutService {
   books:Book[] = [];
 
   getBooks():Observable<Book[]>{
-    let booksObserv: Observable<Book[]> = of(this.books);
-    return booksObserv;
+    return of(this.books);
+  
   }
 
   addToCart(book: Book): void {
